@@ -3,6 +3,8 @@ NextCloudの外部ストレージ連携で、ConoHaオブジェクトストレ�
 
 [NextCloudの外部ストレージとしてConoHaのオブジェクトストレージを使う](https://qiita.com/yamagami2211/items/e3bba1b3df0376a4d466)
 
+**他のswift系のストレージを外部ストレージ連携で使う場合は、この書き換えだと問題が出る可能性があります。  **
+
 `lib/private/Files/ObjectStore` の `SwiftFactory.php` を編集します。
 ```php
 //'catalogName' => 'swift',
@@ -32,3 +34,6 @@ NextCloudの外部ストレージ連携で、ConoHaオブジェクトストレ�
 ```
 
 多分問題なく動くと思います。書き換えが面倒な場合は、ダウンロードしてその場所に上書き保存してください。
+
+なおNextCloudのアップデート毎に書き換えを行う必要があります。  
+NectCloud 20.0.8 (20.0.7) で動作の確認をしています。
